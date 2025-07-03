@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Main23 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt(); // 讀取輸入的整數 N
+
+        for (int i = 1; i <= N; i++) {
+            for (int j = 1; j <= N; j++) {
+                System.out.printf("%4d", i * j); // 每個輸出佔 4 格
+            }
+            System.out.println(); // 換行
+        }
+    }
+}
