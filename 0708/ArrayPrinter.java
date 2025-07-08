@@ -1,11 +1,5 @@
 class ArrayPrinter {
-    /**
-     * 將整數陣列轉換為字串表示法
-     * 模仿 Arrays.toString() 的功能
-     * 這個方法展示了如何透過索引來循序存取陣列元素
-     */
     static String arrayToString(int[] array) {
-        // 處理空陣列的特殊情況
         if (array == null) {
             return "null";
         }
@@ -16,7 +10,6 @@ class ArrayPrinter {
         
         StringBuilder sb = new StringBuilder("[");
         
-        // 使用傳統 for 迴圈來控制格式輸出
         for (int i = 0; i < array.length; i++) {
             sb.append(array[i]);
             if (i < array.length - 1) {
@@ -28,9 +21,6 @@ class ArrayPrinter {
         return sb.toString();
     }
     
-    /**
-     * 列印陣列的詳細資訊，包括索引和值的對應關係
-     */
     static void printArrayWithIndex(int[] array) {
         System.out.println("索引\t值");
         System.out.println("----\t---");
