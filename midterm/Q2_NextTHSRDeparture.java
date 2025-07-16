@@ -1,4 +1,3 @@
-package 期中考題;
 import java.util.*;
 
 public class Q2_NextTHSRDeparture {
@@ -10,14 +9,14 @@ public class Q2_NextTHSRDeparture {
         String[] timeStrs = new String[n];
 
         for (int i = 0; i < n; i++) {
-            timeStrs[i] = sc.nextLine(); // 保留原始字串
-            times[i] = toMinutes(timeStrs[i]); // 換算成總分鐘
+            timeStrs[i] = sc.nextLine();           // 原始時間字串
+            times[i] = toMinutes(timeStrs[i]);     // 轉換成分鐘數
         }
 
         String queryStr = sc.nextLine();
         int query = toMinutes(queryStr);
 
-        // 二分搜尋找出第一個 > query 的班次
+        // 使用 binary search 找第一個 > query 的時刻
         int left = 0, right = n;
         while (left < right) {
             int mid = (left + right) / 2;
@@ -37,7 +36,7 @@ public class Q2_NextTHSRDeparture {
         sc.close();
     }
 
-    // 將 HH:mm 轉為分鐘
+    // 將 "HH:mm" 字串轉換為分鐘數
     public static int toMinutes(String time) {
         String[] parts = time.split(":");
         return Integer.parseInt(parts[0]) * 60 + Integer.parseInt(parts[1]);
@@ -46,5 +45,9 @@ public class Q2_NextTHSRDeparture {
 
 /*
  * Time Complexity: O(log n)
- * 說明：以二分搜尋方式尋找第一個 > query 的開車時間，因此複雜度為 log n。
+ * 說明：
+ * 1. 時刻表已排序，程式使用 binary search (二分搜尋) 找出第一個大於 query 的班次時間。
+ * 2. 二分搜尋時間複雜度為 O(log n)，查詢最快只需 log₂(n) 次比較。
+ * 3. 時間轉換與輸出操作皆為 O(1)，不影響整體主流程複雜度。
+ * 4. 故總體時間複雜度為 O(log n)。
  */

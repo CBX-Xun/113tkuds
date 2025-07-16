@@ -36,5 +36,8 @@ public class Q3_NightMarketRanking {
 
 /*
  * Time Complexity: O(n^2)
- * 說明：使用選擇排序（Selection Sort），每回合需與剩餘 n-i 項比大小，共需 n(n-1)/2 次比較。
+ * 說明：
+ * 1. 程式使用選擇排序（Selection Sort）對 n 筆評分由大到小排序。
+ * 2. 外層需跑 n-1 次，每次內層最多比較 n-i-1 次，共約 n(n-1)/2 次比較。
+ * 3. 因此總體時間複雜度為 O(n²)，即使只印前 5 名也無法減少排序開銷。
  */
